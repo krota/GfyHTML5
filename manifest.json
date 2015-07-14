@@ -9,6 +9,6 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "description": "Converts giant.gfycat gif urls to their gfycat.com WebM urls",
+  "description": "Converts gfycat gif urls to their gfycat.com WebM urls",
   "permissions": ["tabs"]
 }
