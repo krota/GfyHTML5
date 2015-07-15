@@ -1,13 +1,7 @@
-chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
-  if (changeInfo.status == 'loading') {
-    redirectGfyCat(tab, tabId);
+chrome.webNavigation.onBeforeNavigate.addListener(function (details) {
+  console.log('onBeforeNavigate ', details.url);
+  if (details && details.url && details.url.match('(https?:\/\/)[a-z]+[\.]+(gfycat.com)[/]')) {
+  	var gfyPath = details.url.split('/').pop().split('.').shift();
+    chrome.tabs.update(details.tabId, {url: 'https://gfycat.com/' + gfyPath});
   }
 })
-
-function redirectGfyCat(tab, tabId) {
-	var url = tab.url;
-    if(url.includes('.gfycat.com/')) {
-	    var gfyPath = url.split('/').pop().split('.').shift();
-		chrome.tabs.update(tabId, {url: 'https://gfycat.com/' + gfyPath});
-	}
-}

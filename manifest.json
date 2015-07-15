@@ -10,5 +10,6 @@
     "scripts": ["background.js"]
   },
   "description": "Converts gfycat gif urls to their gfycat.com WebM urls",
-  "permissions": ["tabs"]
+  "permissions": ["tabs",
+                  "webNavigation"]
 }
