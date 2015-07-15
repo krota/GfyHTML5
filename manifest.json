@@ -9,7 +9,7 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "description": "Converts gfycat gif urls to their gfycat.com WebM urls",
+  "description": "Converts gfycat gif urls to their respective HTML5 urls to significantly speed up viewing",
   "permissions": ["tabs",
                   "webNavigation"]
 }
